@@ -128,9 +128,7 @@ namespace farzinAttachment
             //                                                                      " where entitycode not in (select entitycode from log_fetch_file where entitytypecode=" + entityTypeCode + ")" +
             //                                                                      " and EntityCode in (select ec from File_Dependency where ETC = " + entityTypeCode + ")");
 
-            List<TransmitalForm> transmitalForms = GetTransmitallEntityCode("select entitycode,entityNumber from " + formName +
-                                                                       " where entitycode not in (select entitycode from log_fetch_file where entitytypecode=" + entityTypeCode + ")" +
-                                                                       " and EntityCode in (select ec from File_Dependency where ETC = " + entityTypeCode + ")");
+            List<TransmitalForm> transmitalForms = GetTransmitallEntityCode(txtQuery.Text);
             //List<TransmitalForm> transmitalForms = new List<TransmitalForm>
             //{
             //    new TransmitalForm
@@ -230,7 +228,7 @@ namespace farzinAttachment
                                     
                                     dataBase.execQuery("insert into log_fetch_file2 (entityTypeCode,entitycode,dependencyID) values (" + entityTypeCode + "," + transmitalNewForm.entityCode + "," + dependencyId + ")");
 
-                                    // آزادسازی حافظه
+                                    // آزادسازی حافظه2
                                     fileBytes = null;
                                 }
                             }
