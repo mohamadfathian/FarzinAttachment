@@ -1,0 +1,1196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://ICAN.ir/Farzin/WebServices/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://ICAN.ir/Farzin/WebServices/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://ICAN.ir/Farzin/WebServices/">
+      <s:element name="InsertDocument">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="formStructure" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertDocumentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InsertDocumentResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateDocument">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ETC" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="EC" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="docStructure" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateDocumentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateDocumentResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="strErrorMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SignDocument">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="EntityTypeCode" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="EntityCode" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="signStructure" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SignDocumentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SignDocumentResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="strErrorMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UnSignDocument">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="EntityTypeCode" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="EntityCode" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="signStructure" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UnSignDocumentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UnSignDocumentResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="strErrorMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AttachFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="bfile" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="fileName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fileExtension" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MainETC" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="MainEC" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="DependencyType" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AttachFileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AttachFileResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="strErrorMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddHameshOpticalPen">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="bfile" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="strExtention" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ETC" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EC" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="hiddenHamesh" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="Hameshtitle" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddHameshOpticalPenResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddHameshOpticalPenResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="strErrorMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AttachFileInForm">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="bfile" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="fileName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fileExtension" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="MainETC" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="MainEC" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="FieldName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="sendFileISFarzinEncryption" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AttachFileInFormResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AttachFileInFormResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="strErrorMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AttachEntity">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="MainETC" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="MainEC" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="DependentETC" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="DependentEC" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="DependencyType" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AttachEntityResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AttachEntityResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="strErrorMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFileDependency">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ETC" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="EC" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFileDependencyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFileDependencyResult" type="tns:Dependency" />
+            <s:element minOccurs="0" maxOccurs="1" name="strErrorMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Dependency">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Peyro" type="tns:ArrayOfAnyType" />
+          <s:element minOccurs="0" maxOccurs="1" name="Peyvast" type="tns:ArrayOfAnyType" />
+          <s:element minOccurs="0" maxOccurs="1" name="DarErtebat" type="tns:ArrayOfAnyType" />
+          <s:element minOccurs="0" maxOccurs="1" name="Atf" type="tns:ArrayOfAnyType" />
+          <s:element minOccurs="0" maxOccurs="1" name="IndicatorScanedFile" type="tns:ArrayOfAnyType" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfAnyType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="anyType" nillable="true" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetEntityDependency">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ETC" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="EC" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEntityDependencyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEntityDependencyResult" type="tns:Dependency" />
+            <s:element minOccurs="0" maxOccurs="1" name="strErrorMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetHameshList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ETC" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="EC" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetHameshListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetHameshListResult" type="tns:ArrayOfAnyType" />
+            <s:element minOccurs="0" maxOccurs="1" name="strErrorMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetHistoryList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ETC" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="EC" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetHistoryListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetHistoryListResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+            <s:element minOccurs="0" maxOccurs="1" name="strErrorMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetContentForm">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ETC" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="EC" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="LayoutID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetContentFormResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetContentFormResult" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="strErrorMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetContentFormAs">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ETC" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="EC" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="LayoutID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="exportType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetContentFormAsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetContentFormAsResult" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="strErrorMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetContentFormAsXml">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ETC" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="EC" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetContentFormAsXmlResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetContentFormAsXmlResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strErrorMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetContentFormByFieldNameAsXml">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ETC" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="EC" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="FieldNames" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetContentFormByFieldNameAsXmlResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetContentFormByFieldNameAsXmlResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strErrorMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckExistDocument">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="EntityTypeCode" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="WhereCondition" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckExistDocumentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CheckExistDocumentResult" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="EntityCode" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="strErrorMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetListOfActions">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ETC" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetListOfActionsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetListOfActionsResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strErrorMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetListOfEntity">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetListOfEntityResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetListOfEntityResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strErrorMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFarzinFileObject">
+        <s:complexType />
+      </s:element>
+      <s:complexType name="FarzinFile">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="FileID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="FileBinary" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="FileExtension" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FileName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreationDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="CreationRoleName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CreationFullName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetFarzinFileObjectResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFarzinFileObjectResult" type="tns:FarzinFile" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEntityDependencyItemObject">
+        <s:complexType />
+      </s:element>
+      <s:complexType name="EntityDependencyItem">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ETC" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="EC" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="EntityNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ImportEntityNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ExportEntityNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Title" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EntityFarsiName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreationDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="CreationRoleName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CreationFullName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetEntityDependencyItemObjectResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEntityDependencyItemObjectResult" type="tns:EntityDependencyItem" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetHameshObject">
+        <s:complexType />
+      </s:element>
+      <s:complexType name="Hamesh">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="HameshID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Title" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Content" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="HameshImage" type="tns:FarzinFile" />
+          <s:element minOccurs="1" maxOccurs="1" name="hameshType" type="tns:HameshType" />
+          <s:element minOccurs="0" maxOccurs="1" name="CreatorName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CreatorRoleName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatorID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatorRoleID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CreationShamsiDate" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreationDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsPrivate" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsHidden" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="HameshType">
+        <s:restriction base="s:string">
+          <s:enumeration value="Text" />
+          <s:enumeration value="Image" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="GetHameshObjectResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetHameshObjectResult" type="tns:Hamesh" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSignatureList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ETC" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSignatureListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSignatureListResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strErrorMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FSEGenerate_WithLogin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoginUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LoginPassword" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ETC" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="EC" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FSEGenerate_WithLoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="FSEGenerate_WithLoginResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="strErrorMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetDocumentViewState">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="receiverCode" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="documentViewState" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetDocumentViewStateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SetDocumentViewStateResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="strErrorMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="InsertDocumentSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertDocument" />
+  </wsdl:message>
+  <wsdl:message name="InsertDocumentSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertDocumentResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateDocumentSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateDocument" />
+  </wsdl:message>
+  <wsdl:message name="UpdateDocumentSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateDocumentResponse" />
+  </wsdl:message>
+  <wsdl:message name="SignDocumentSoapIn">
+    <wsdl:part name="parameters" element="tns:SignDocument" />
+  </wsdl:message>
+  <wsdl:message name="SignDocumentSoapOut">
+    <wsdl:part name="parameters" element="tns:SignDocumentResponse" />
+  </wsdl:message>
+  <wsdl:message name="UnSignDocumentSoapIn">
+    <wsdl:part name="parameters" element="tns:UnSignDocument" />
+  </wsdl:message>
+  <wsdl:message name="UnSignDocumentSoapOut">
+    <wsdl:part name="parameters" element="tns:UnSignDocumentResponse" />
+  </wsdl:message>
+  <wsdl:message name="AttachFileSoapIn">
+    <wsdl:part name="parameters" element="tns:AttachFile" />
+  </wsdl:message>
+  <wsdl:message name="AttachFileSoapOut">
+    <wsdl:part name="parameters" element="tns:AttachFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddHameshOpticalPenSoapIn">
+    <wsdl:part name="parameters" element="tns:AddHameshOpticalPen" />
+  </wsdl:message>
+  <wsdl:message name="AddHameshOpticalPenSoapOut">
+    <wsdl:part name="parameters" element="tns:AddHameshOpticalPenResponse" />
+  </wsdl:message>
+  <wsdl:message name="AttachFileInFormSoapIn">
+    <wsdl:part name="parameters" element="tns:AttachFileInForm" />
+  </wsdl:message>
+  <wsdl:message name="AttachFileInFormSoapOut">
+    <wsdl:part name="parameters" element="tns:AttachFileInFormResponse" />
+  </wsdl:message>
+  <wsdl:message name="AttachEntitySoapIn">
+    <wsdl:part name="parameters" element="tns:AttachEntity" />
+  </wsdl:message>
+  <wsdl:message name="AttachEntitySoapOut">
+    <wsdl:part name="parameters" element="tns:AttachEntityResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFileDependencySoapIn">
+    <wsdl:part name="parameters" element="tns:GetFileDependency" />
+  </wsdl:message>
+  <wsdl:message name="GetFileDependencySoapOut">
+    <wsdl:part name="parameters" element="tns:GetFileDependencyResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEntityDependencySoapIn">
+    <wsdl:part name="parameters" element="tns:GetEntityDependency" />
+  </wsdl:message>
+  <wsdl:message name="GetEntityDependencySoapOut">
+    <wsdl:part name="parameters" element="tns:GetEntityDependencyResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetHameshListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetHameshList" />
+  </wsdl:message>
+  <wsdl:message name="GetHameshListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetHameshListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetHistoryListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetHistoryList" />
+  </wsdl:message>
+  <wsdl:message name="GetHistoryListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetHistoryListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetContentFormSoapIn">
+    <wsdl:part name="parameters" element="tns:GetContentForm" />
+  </wsdl:message>
+  <wsdl:message name="GetContentFormSoapOut">
+    <wsdl:part name="parameters" element="tns:GetContentFormResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetContentFormAsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetContentFormAs" />
+  </wsdl:message>
+  <wsdl:message name="GetContentFormAsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetContentFormAsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetContentFormAsXmlSoapIn">
+    <wsdl:part name="parameters" element="tns:GetContentFormAsXml" />
+  </wsdl:message>
+  <wsdl:message name="GetContentFormAsXmlSoapOut">
+    <wsdl:part name="parameters" element="tns:GetContentFormAsXmlResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetContentFormByFieldNameAsXmlSoapIn">
+    <wsdl:part name="parameters" element="tns:GetContentFormByFieldNameAsXml" />
+  </wsdl:message>
+  <wsdl:message name="GetContentFormByFieldNameAsXmlSoapOut">
+    <wsdl:part name="parameters" element="tns:GetContentFormByFieldNameAsXmlResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckExistDocumentSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckExistDocument" />
+  </wsdl:message>
+  <wsdl:message name="CheckExistDocumentSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckExistDocumentResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetListOfActionsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetListOfActions" />
+  </wsdl:message>
+  <wsdl:message name="GetListOfActionsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetListOfActionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetListOfEntitySoapIn">
+    <wsdl:part name="parameters" element="tns:GetListOfEntity" />
+  </wsdl:message>
+  <wsdl:message name="GetListOfEntitySoapOut">
+    <wsdl:part name="parameters" element="tns:GetListOfEntityResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFarzinFileObjectSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFarzinFileObject" />
+  </wsdl:message>
+  <wsdl:message name="GetFarzinFileObjectSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFarzinFileObjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEntityDependencyItemObjectSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEntityDependencyItemObject" />
+  </wsdl:message>
+  <wsdl:message name="GetEntityDependencyItemObjectSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEntityDependencyItemObjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetHameshObjectSoapIn">
+    <wsdl:part name="parameters" element="tns:GetHameshObject" />
+  </wsdl:message>
+  <wsdl:message name="GetHameshObjectSoapOut">
+    <wsdl:part name="parameters" element="tns:GetHameshObjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSignatureListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSignatureList" />
+  </wsdl:message>
+  <wsdl:message name="GetSignatureListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSignatureListResponse" />
+  </wsdl:message>
+  <wsdl:message name="FSEGenerate_WithLoginSoapIn">
+    <wsdl:part name="parameters" element="tns:FSEGenerate_WithLogin" />
+  </wsdl:message>
+  <wsdl:message name="FSEGenerate_WithLoginSoapOut">
+    <wsdl:part name="parameters" element="tns:FSEGenerate_WithLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetDocumentViewStateSoapIn">
+    <wsdl:part name="parameters" element="tns:SetDocumentViewState" />
+  </wsdl:message>
+  <wsdl:message name="SetDocumentViewStateSoapOut">
+    <wsdl:part name="parameters" element="tns:SetDocumentViewStateResponse" />
+  </wsdl:message>
+  <wsdl:portType name="eFormManagmentSoap">
+    <wsdl:operation name="InsertDocument">
+      <wsdl:input message="tns:InsertDocumentSoapIn" />
+      <wsdl:output message="tns:InsertDocumentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDocument">
+      <wsdl:input message="tns:UpdateDocumentSoapIn" />
+      <wsdl:output message="tns:UpdateDocumentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SignDocument">
+      <wsdl:input message="tns:SignDocumentSoapIn" />
+      <wsdl:output message="tns:SignDocumentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UnSignDocument">
+      <wsdl:input message="tns:UnSignDocumentSoapIn" />
+      <wsdl:output message="tns:UnSignDocumentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AttachFile">
+      <wsdl:input message="tns:AttachFileSoapIn" />
+      <wsdl:output message="tns:AttachFileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddHameshOpticalPen">
+      <wsdl:input message="tns:AddHameshOpticalPenSoapIn" />
+      <wsdl:output message="tns:AddHameshOpticalPenSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AttachFileInForm">
+      <wsdl:input message="tns:AttachFileInFormSoapIn" />
+      <wsdl:output message="tns:AttachFileInFormSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AttachEntity">
+      <wsdl:input message="tns:AttachEntitySoapIn" />
+      <wsdl:output message="tns:AttachEntitySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFileDependency">
+      <wsdl:input message="tns:GetFileDependencySoapIn" />
+      <wsdl:output message="tns:GetFileDependencySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEntityDependency">
+      <wsdl:input message="tns:GetEntityDependencySoapIn" />
+      <wsdl:output message="tns:GetEntityDependencySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHameshList">
+      <wsdl:input message="tns:GetHameshListSoapIn" />
+      <wsdl:output message="tns:GetHameshListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHistoryList">
+      <wsdl:input message="tns:GetHistoryListSoapIn" />
+      <wsdl:output message="tns:GetHistoryListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetContentForm">
+      <wsdl:input message="tns:GetContentFormSoapIn" />
+      <wsdl:output message="tns:GetContentFormSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetContentFormAs">
+      <wsdl:input message="tns:GetContentFormAsSoapIn" />
+      <wsdl:output message="tns:GetContentFormAsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetContentFormAsXml">
+      <wsdl:input message="tns:GetContentFormAsXmlSoapIn" />
+      <wsdl:output message="tns:GetContentFormAsXmlSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetContentFormByFieldNameAsXml">
+      <wsdl:input message="tns:GetContentFormByFieldNameAsXmlSoapIn" />
+      <wsdl:output message="tns:GetContentFormByFieldNameAsXmlSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckExistDocument">
+      <wsdl:input message="tns:CheckExistDocumentSoapIn" />
+      <wsdl:output message="tns:CheckExistDocumentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListOfActions">
+      <wsdl:input message="tns:GetListOfActionsSoapIn" />
+      <wsdl:output message="tns:GetListOfActionsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListOfEntity">
+      <wsdl:input message="tns:GetListOfEntitySoapIn" />
+      <wsdl:output message="tns:GetListOfEntitySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFarzinFileObject">
+      <wsdl:input message="tns:GetFarzinFileObjectSoapIn" />
+      <wsdl:output message="tns:GetFarzinFileObjectSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEntityDependencyItemObject">
+      <wsdl:input message="tns:GetEntityDependencyItemObjectSoapIn" />
+      <wsdl:output message="tns:GetEntityDependencyItemObjectSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHameshObject">
+      <wsdl:input message="tns:GetHameshObjectSoapIn" />
+      <wsdl:output message="tns:GetHameshObjectSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSignatureList">
+      <wsdl:input message="tns:GetSignatureListSoapIn" />
+      <wsdl:output message="tns:GetSignatureListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FSEGenerate_WithLogin">
+      <wsdl:input message="tns:FSEGenerate_WithLoginSoapIn" />
+      <wsdl:output message="tns:FSEGenerate_WithLoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetDocumentViewState">
+      <wsdl:input message="tns:SetDocumentViewStateSoapIn" />
+      <wsdl:output message="tns:SetDocumentViewStateSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="eFormManagmentSoap" type="tns:eFormManagmentSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="InsertDocument">
+      <soap:operation soapAction="http://ICAN.ir/Farzin/WebServices/InsertDocument" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDocument">
+      <soap:operation soapAction="http://ICAN.ir/Farzin/WebServices/UpdateDocument" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SignDocument">
+      <soap:operation soapAction="http://ICAN.ir/Farzin/WebServices/SignDocument" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnSignDocument">
+      <soap:operation soapAction="http://ICAN.ir/Farzin/WebServices/UnSignDocument" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AttachFile">
+      <soap:operation soapAction="http://ICAN.ir/Farzin/WebServices/AttachFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddHameshOpticalPen">
+      <soap:operation soapAction="http://ICAN.ir/Farzin/WebServices/AddHameshOpticalPen" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AttachFileInForm">
+      <soap:operation soapAction="http://ICAN.ir/Farzin/WebServices/AttachFileInForm" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AttachEntity">
+      <soap:operation soapAction="http://ICAN.ir/Farzin/WebServices/AttachEntity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFileDependency">
+      <soap:operation soapAction="http://ICAN.ir/Farzin/WebServices/GetFileDependency" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEntityDependency">
+      <soap:operation soapAction="http://ICAN.ir/Farzin/WebServices/GetEntityDependency" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHameshList">
+      <soap:operation soapAction="http://ICAN.ir/Farzin/WebServices/GetHameshList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHistoryList">
+      <soap:operation soapAction="http://ICAN.ir/Farzin/WebServices/GetHistoryList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContentForm">
+      <soap:operation soapAction="http://ICAN.ir/Farzin/WebServices/GetContentForm" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContentFormAs">
+      <soap:operation soapAction="http://ICAN.ir/Farzin/WebServices/GetContentFormAs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContentFormAsXml">
+      <soap:operation soapAction="http://ICAN.ir/Farzin/WebServices/GetContentFormAsXml" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContentFormByFieldNameAsXml">
+      <soap:operation soapAction="http://ICAN.ir/Farzin/WebServices/GetContentFormByFieldNameAsXml" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckExistDocument">
+      <soap:operation soapAction="http://ICAN.ir/Farzin/WebServices/CheckExistDocument" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListOfActions">
+      <soap:operation soapAction="http://ICAN.ir/Farzin/WebServices/GetListOfActions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListOfEntity">
+      <soap:operation soapAction="http://ICAN.ir/Farzin/WebServices/GetListOfEntity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFarzinFileObject">
+      <soap:operation soapAction="http://ICAN.ir/Farzin/WebServices/GetFarzinFileObject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEntityDependencyItemObject">
+      <soap:operation soapAction="http://ICAN.ir/Farzin/WebServices/GetEntityDependencyItemObject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHameshObject">
+      <soap:operation soapAction="http://ICAN.ir/Farzin/WebServices/GetHameshObject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSignatureList">
+      <soap:operation soapAction="http://ICAN.ir/Farzin/WebServices/GetSignatureList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FSEGenerate_WithLogin">
+      <soap:operation soapAction="http://ICAN.ir/Farzin/WebServices/FSEGenerate_WithLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetDocumentViewState">
+      <soap:operation soapAction="http://ICAN.ir/Farzin/WebServices/SetDocumentViewState" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="eFormManagmentSoap12" type="tns:eFormManagmentSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="InsertDocument">
+      <soap12:operation soapAction="http://ICAN.ir/Farzin/WebServices/InsertDocument" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDocument">
+      <soap12:operation soapAction="http://ICAN.ir/Farzin/WebServices/UpdateDocument" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SignDocument">
+      <soap12:operation soapAction="http://ICAN.ir/Farzin/WebServices/SignDocument" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnSignDocument">
+      <soap12:operation soapAction="http://ICAN.ir/Farzin/WebServices/UnSignDocument" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AttachFile">
+      <soap12:operation soapAction="http://ICAN.ir/Farzin/WebServices/AttachFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddHameshOpticalPen">
+      <soap12:operation soapAction="http://ICAN.ir/Farzin/WebServices/AddHameshOpticalPen" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AttachFileInForm">
+      <soap12:operation soapAction="http://ICAN.ir/Farzin/WebServices/AttachFileInForm" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AttachEntity">
+      <soap12:operation soapAction="http://ICAN.ir/Farzin/WebServices/AttachEntity" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFileDependency">
+      <soap12:operation soapAction="http://ICAN.ir/Farzin/WebServices/GetFileDependency" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEntityDependency">
+      <soap12:operation soapAction="http://ICAN.ir/Farzin/WebServices/GetEntityDependency" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHameshList">
+      <soap12:operation soapAction="http://ICAN.ir/Farzin/WebServices/GetHameshList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHistoryList">
+      <soap12:operation soapAction="http://ICAN.ir/Farzin/WebServices/GetHistoryList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContentForm">
+      <soap12:operation soapAction="http://ICAN.ir/Farzin/WebServices/GetContentForm" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContentFormAs">
+      <soap12:operation soapAction="http://ICAN.ir/Farzin/WebServices/GetContentFormAs" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContentFormAsXml">
+      <soap12:operation soapAction="http://ICAN.ir/Farzin/WebServices/GetContentFormAsXml" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContentFormByFieldNameAsXml">
+      <soap12:operation soapAction="http://ICAN.ir/Farzin/WebServices/GetContentFormByFieldNameAsXml" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckExistDocument">
+      <soap12:operation soapAction="http://ICAN.ir/Farzin/WebServices/CheckExistDocument" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListOfActions">
+      <soap12:operation soapAction="http://ICAN.ir/Farzin/WebServices/GetListOfActions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListOfEntity">
+      <soap12:operation soapAction="http://ICAN.ir/Farzin/WebServices/GetListOfEntity" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFarzinFileObject">
+      <soap12:operation soapAction="http://ICAN.ir/Farzin/WebServices/GetFarzinFileObject" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEntityDependencyItemObject">
+      <soap12:operation soapAction="http://ICAN.ir/Farzin/WebServices/GetEntityDependencyItemObject" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHameshObject">
+      <soap12:operation soapAction="http://ICAN.ir/Farzin/WebServices/GetHameshObject" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSignatureList">
+      <soap12:operation soapAction="http://ICAN.ir/Farzin/WebServices/GetSignatureList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FSEGenerate_WithLogin">
+      <soap12:operation soapAction="http://ICAN.ir/Farzin/WebServices/FSEGenerate_WithLogin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetDocumentViewState">
+      <soap12:operation soapAction="http://ICAN.ir/Farzin/WebServices/SetDocumentViewState" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="eFormManagment">
+    <wsdl:port name="eFormManagmentSoap" binding="tns:eFormManagmentSoap">
+      <soap:address location="http://10.130.0.30:8090/FarzinSoft/WebServices/OA/eFormManagment.asmx" />
+    </wsdl:port>
+    <wsdl:port name="eFormManagmentSoap12" binding="tns:eFormManagmentSoap12">
+      <soap12:address location="http://10.130.0.30:8090/FarzinSoft/WebServices/OA/eFormManagment.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

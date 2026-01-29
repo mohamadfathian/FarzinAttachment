@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="farzinAttachment.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="farzinAttachment_Authentication_Authentication" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://10.130.0.30:8090/FarzinSoft/WebServices/OA/Authentication.asmx</Value>
+    </Setting>
+    <Setting Name="farzinAttachment_eFormManagment_eFormManagment" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://10.130.0.30:8090/FarzinSoft/WebServices/OA/eFormManagment.asmx</Value>
+    </Setting>
+    <Setting Name="userName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">10203040</Value>
+    </Setting>
+    <Setting Name="Password" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Ww@987654321%</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
