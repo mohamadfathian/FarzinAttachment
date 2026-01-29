@@ -115,11 +115,12 @@ namespace farzinAttachment
             entityTypeCode.Text = "992";
         }
 
+        Authentication.Authentication fla = new Authentication.Authentication();
+        eFormManagment.eFormManagment fef = new eFormManagment.eFormManagment();
         private void BtnConverter_Click(object sender, EventArgs e)
         {
             DataAccess dataBase=new DataAccess();
-            Authentication.Authentication fla = new Authentication.Authentication();
-            eFormManagment.eFormManagment fef = new eFormManagment.eFormManagment();
+            
 
             CookieContainer cookieContainer = new CookieContainer();
 
@@ -128,12 +129,12 @@ namespace farzinAttachment
             //                                                                      " where entitycode not in (select entitycode from log_fetch_file where entitytypecode=" + entityTypeCode + ")" +
             //                                                                      " and EntityCode in (select ec from File_Dependency where ETC = " + entityTypeCode + ")");
 
-            List<TransmitalForm> transmitalForms = GetTransmitallEntityCode(txtQuery.Text);
+             List<TransmitalForm> transmitalForms = GetTransmitallEntityCode(txtQuery.Text);
             //List<TransmitalForm> transmitalForms = new List<TransmitalForm>
             //{
             //    new TransmitalForm
             //    {
-            //        entityCode=7203,
+            //        entityCode=362,
             //        entityNumber="2333"
             //    }
             //};
@@ -222,11 +223,13 @@ namespace farzinAttachment
 
                                     //HelperClass.LogToFile($@"F:\{filePath}\{fileName}_{transmitalNewForm.entityNumber}{extension}+{dependencyId}++{transmitalNewForm.entityCode}");
 
-                                    string path2 = $@"F:\{txtFilePath.Text}\{fileName}_{transmitalNewForm.entityNumber}{extension}";
+                                    string path2 = $@"F:\{txtFilePath.Text}\{fileName}_{dependencyId}{extension}";
 
                                     File.WriteAllBytes(path2, fileBytes);
-                                    
-                                    dataBase.execQuery("insert into log_fetch_file2 (entityTypeCode,entitycode,dependencyID) values (" + entityTypeCode + "," + transmitalNewForm.entityCode + "," + dependencyId + ")");
+                                    if (chkInsertINDB.Checked)
+                                    {
+                                        dataBase.execQuery("insert into log_fetch_file2 (entityTypeCode,entitycode,dependencyID) values (" + txtEntityTypeCode.Text + "," + transmitalNewForm.entityCode + "," + dependencyId + ")");
+                                    }
 
                                     // آزادسازی حافظه2
                                     fileBytes = null;
@@ -279,7 +282,6 @@ namespace farzinAttachment
 
         public bool CheckingPass()
         {
-            Authentication.Authentication fla = new Authentication.Authentication();
             string userName = Properties.Settings.Default.userName;
             string passwored = Properties.Settings.Default.Password;
             string strErrorMsg = "";

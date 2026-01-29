@@ -44,6 +44,7 @@ namespace farzinAttachment
             this.BtnConverter = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.txtEntityTypeCode = new System.Windows.Forms.TextBox();
+            this.chkInsertINDB = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // linkLabel1
@@ -190,11 +191,22 @@ namespace farzinAttachment
             this.txtEntityTypeCode.Size = new System.Drawing.Size(127, 20);
             this.txtEntityTypeCode.TabIndex = 14;
             // 
+            // chkInsertINDB
+            // 
+            this.chkInsertINDB.AutoSize = true;
+            this.chkInsertINDB.Location = new System.Drawing.Point(187, 462);
+            this.chkInsertINDB.Name = "chkInsertINDB";
+            this.chkInsertINDB.Size = new System.Drawing.Size(109, 17);
+            this.chkInsertINDB.TabIndex = 16;
+            this.chkInsertINDB.Text = "insert in database";
+            this.chkInsertINDB.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(848, 602);
+            this.Controls.Add(this.chkInsertINDB);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtEntityTypeCode);
             this.Controls.Add(this.BtnConverter);
@@ -238,6 +250,7 @@ namespace farzinAttachment
         private System.Windows.Forms.Button BtnConverter;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtEntityTypeCode;
+        private System.Windows.Forms.CheckBox chkInsertINDB;
     }
 }
 
