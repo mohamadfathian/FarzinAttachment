@@ -113,6 +113,9 @@ namespace farzinAttachment
         {
             txtSource.Text = @"F:\transmital_Apex";
             entityTypeCode.Text = "992";
+            txtQuery.Text = "select entitycode,entityNumber from Entity_TransmitalForm " +
+            " where entitycode not in (select entitycode from log_fetch_file2 where entitytypecode = 992) " +
+            " and EntityCode in (select ec from File_Dependency where ETC = 992)";
         }
 
         Authentication.Authentication fla = new Authentication.Authentication();
