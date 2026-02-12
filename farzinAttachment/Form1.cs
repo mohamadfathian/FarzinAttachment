@@ -223,7 +223,7 @@ namespace farzinAttachment
 
                                     //HelperClass.LogToFile($@"F:\{filePath}\{fileName}_{transmitalNewForm.entityNumber}{extension}+{dependencyId}++{transmitalNewForm.entityCode}");
 
-                                    string path2 = $@"F:\{txtFilePath.Text}\{fileName}_{dependencyId}{extension}";
+                                    string path2 = $@"F:\{txtFilePath.Text}\{fileName}_{dependencyId}_{transmitalNewForm.entityNumber}{extension}";
 
                                     File.WriteAllBytes(path2, fileBytes);
                                     if (chkInsertINDB.Checked)
